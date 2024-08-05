@@ -1,8 +1,5 @@
 warn('Begin')
 
-local path = nil -- CHANGE THIS TO PATH!
-
-local timeout = 10
 local decompile = loadstring(game:HttpGet("https://raw.githubusercontent.com/NKachi2U/Advanced-Decompiler-V3/patch-1/init.lua"))()
 
 local function construct_TimeoutHandler(timeout, f, timeout_ret)
@@ -39,12 +36,17 @@ local function construct_TimeoutHandler(timeout, f, timeout_ret)
 	end
 end
 
-local decomp = construct_TimeoutHandler(timeout, decompile, "Decompiler timed out")
-
-warn('Construct')
-
-local function fast_decompile(script)
-	local ok, result = decomp(script)
+local function fast_decompile(script, timeout, tlog)
+	warn('Starting decomp of', path)
+	
+	if tlog then
+		task.delay(timeout, function()
+			if not ok then
+				warn('Timeout')
+		    	end
+		end)
+	end
+	ok, result = construct_TimeoutHandler(timeout, decompile, "Decompiler timed out")(script)
 	if not result then
 		ok, result = false, "Empty Output"
     end
@@ -57,18 +59,13 @@ local function fast_decompile(script)
 		output = "--[[ Failed to decompile\nReason:\n" .. (result or "") .. "\n]]"
 	end
 
+	warn('finished decomp')
 	return ok, output
 end
 
+local _ENV = (getgenv or getrenv or getfenv)()
+_ENV.fast_decompile = fast_decompile
 	
-warn('Starting decomp of', path)
-task.delay(timeout, function()
-    if not success then
-        warn('Timeout')
-    end
-end)
 
-success, src = fast_decompile(path)
-warn(src)
 
-warn('finished decomp')
+
