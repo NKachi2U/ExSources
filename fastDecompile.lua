@@ -37,7 +37,7 @@ local function construct_TimeoutHandler(timeout, f, timeout_ret)
 end
 
 local function fast_decompile(script, timeout, tlog)
-	warn('Starting decomp of', path)
+	warn('Starting decomp of', script)
 	
 	if tlog then
 		task.delay(timeout, function()
