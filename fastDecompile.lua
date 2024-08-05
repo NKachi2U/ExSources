@@ -17,7 +17,7 @@ local function construct_TimeoutHandler(timeout, f, timeout_ret)
 			end)
 
 			task.spawn(function()
-				local ok, result = pcall(f, script)
+				local ok, result = pcall(f, script, timeout)
 
 				if isCancelled then
 					return
