@@ -5,7 +5,7 @@ local decompile = loadstring(game:HttpGet("https://raw.githubusercontent.com/NKa
 local function construct_TimeoutHandler(timeout, f, timeout_ret)
 	return function(script) -- TODO Ideally use ... (vararg) instead of `script` in case this is reused for something other than `decompile` & `getscriptbytecode`
 			if timeout < 0 then
-				return pcall(f, script)
+				return pcall(f, script, timeout)
 			end
 
 			local thread = coroutine.running()
