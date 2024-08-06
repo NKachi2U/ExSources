@@ -64,6 +64,7 @@ local function createReader()
 
     	Full.Name = 'Full'
     	Full.BackgroundColor3 = rgb(71,71,71)
+	Full.BorderSizePixel = 0
     	Full.Position = scale2(.238, .13)
     	Full.Size = scale2(.531, .774)
  	Full.Parent = ScreenGui
