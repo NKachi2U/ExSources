@@ -162,7 +162,7 @@ local function fast_decompile(script, timeout, createGui, tlog)
 
 	if createGui then
 		local gui = createReader()
-		gui.Full.Info.MainInfo.sName.Text = string.gsub(gui.Full.Info.MainInfo.sName.Text, '...', script.Name)
+		gui.Full.Info.MainInfo.sName.Text = string.gsub(gui.Full.Info.MainInfo.sName.Text, '%...', script:GetFullName())
 		gui.Full.Body.SourceInput.Text = output
 	end
 	return ok, output
