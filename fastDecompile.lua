@@ -131,7 +131,7 @@ local function createReader()
     	return ScreenGui
 end
 
-local function fast_decompile(script, timeout, tlog)
+local function fast_decompile(script, timeout, createGui, tlog)
 	warn('Starting decomp of', script)
 	
 	if tlog then
@@ -155,6 +155,12 @@ local function fast_decompile(script, timeout, tlog)
 	end
 
 	warn('finished decomp')
+
+	if createGui then
+		local gui = createReader()
+		gui.Full.Info.MainInfo.sName.Text = string.gsub(gui.Full.Info.MainInfo.sName.Text, '...', script.Name)
+		gui.Full.Body.SourceInput.Text = output
+	end
 	return ok, output
 end
 
