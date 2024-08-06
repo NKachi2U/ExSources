@@ -60,6 +60,7 @@ local function createReader()
     	local SourceInput = Instance.new('TextLabel')
 
     	ScreenGui.Name = 'ScriptViewer'
+	ScreenGui.ResetOnSpawn = false
     	ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
 
     	Full.Name = 'Full'
