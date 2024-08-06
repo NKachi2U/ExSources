@@ -60,7 +60,7 @@ local function createReader()
     	local SourceInput = Instance.new('TextLabel')
 
     	ScreenGui.Name = 'ScriptViewer'
-    	ScreenGui.Parent = game.StarterGui
+    	ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
 
     	Full.Name = 'Full'
     	Full.BackgroundColor3 = rgb(71,71,71)
