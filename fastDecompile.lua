@@ -89,6 +89,7 @@ local function createReader()
 
     	sName.Name = 'sName'
     	sName.BackgroundColor3 = rgb(39,39,39)
+	sName.BorderSizePixel = 0
     	sName.Size = scale2(2.61,.288)
     	sName.FontFace = Font.fromName(FONT_NAME)
     	sName.Text = '  Path: ...'
@@ -100,12 +101,13 @@ local function createReader()
     	Credit.Name = 'Credit'
     	Credit.BackgroundColor3 = rgb(0,0,0)
     	Credit.BackgroundTransparency = .9
+	Credit.BorderSizePixel = 0
     	Credit.Position = scale2(.694,.788)
     	Credit.Size = scale2(.295,.213)
     	Credit.FontFace = Font.fromName(FONT_NAME)
     	Credit.Text = 'Decompiled by fast_decomp'
     	Credit.TextColor3 = rgb(255,255,255)
-    	Credit.TextSize = 10
+    	Credit.TextSize = 11
     	Credit.Parent = Info
 
     	Body.Name = 'Body'
