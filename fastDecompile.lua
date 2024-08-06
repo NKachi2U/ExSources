@@ -114,14 +114,18 @@ local function createReader()
 
     	Body.Name = 'Body'
     	Body.BackgroundTransparency = 1
+	Body.BorderColor3 = rgb(0,0,0)
+	Body.BorderSizePixel = 1
     	Body.Position = scale2(.034,.187)
     	Body.Size = scale2(.965,.813)
     	Body.AutomaticCanvasSize = Enum.AutomaticSize.Y
     	Body.CanvasPosition = Vector2.new(0,0)
     	Body.CanvasSize = scale2(0,0)
+	Body.ScrollBarImageColor3 = rgb(57,57,57)
     	Body.Parent = Full
 
    	SourceInput.Name = 'SourceInput'
+	SourceInput.AutomaticSize = Enum.AutomaticSize.Y
     	SourceInput.BackgroundTransparency = 1
     	SourceInput.Position = scale2(0,0)
     	SourceInput.Size = scale2(1,1)
